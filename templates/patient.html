@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalii Pacient</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e3f2fd; /* Fundal albastru medical */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            color: #0d6efd;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Detalii Pacient</h1>
+        <form method="POST" action="/index">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nume pacient</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Introdu numele" required>
+            </div>
+            <div class="mb-3">
+                <label for="code" class="form-label">Cod pacient</label>
+                <input type="text" class="form-control" id="code" name="code" placeholder="Introdu codul" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Continuă</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

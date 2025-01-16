@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomandare Specialist</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1 class="text-center">Recomandare Specialist</h1>
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nume pacient</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="code" class="form-label">Cod pacient</label>
+                    <input type="text" class="form-control" id="code" name="code" required>
+                </div>
+                {% for i, question in questions %}
+                <div class="mb-3">
+                    <label for="question_{{ i }}" class="form-label">{{ question }}</label>
+                    <textarea class="form-control" id="question_{{ i }}" name="question_{{ i }}" rows="2" required></textarea>
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary w-100">Trimite</button>
+            </form>
+
+            {% if recommendation and severity %}
+                <div class="mt-4">
+                    <h2>Rezultate:</h2>
+                    <p><strong>Specialist recomandat:</strong> {{ recommendation }}</p>
+                    <p><strong>Gravitatea situației:</strong> {{ severity }}</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
